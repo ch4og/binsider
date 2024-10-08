@@ -10,6 +10,7 @@
         pkgs = nixpkgs.legacyPackages.${system};
       in
       rec {
+        nix.settings.sandbox = false;
         packages = rec {
           binsider = pkgs.rustPlatform.buildRustPackage {
             name = "binsider";
@@ -17,7 +18,7 @@
             cargoLock = {
               lockFile = ./Cargo.lock;
             };
-            checkType = "debug";
+            buildType = "debug";
             checkFlags = [
               "--skip=test_extract_strings"
               "--skip=test_init"
