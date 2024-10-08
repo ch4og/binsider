@@ -10,6 +10,7 @@
         pkgs = nixpkgs.legacyPackages.${system};
       in
       rec {
+        nix.settings.sandbox = false;
         packages = rec {
           binsider = pkgs.rustPlatform.buildRustPackage {
             name = "binsider";
