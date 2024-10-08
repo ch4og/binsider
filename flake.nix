@@ -17,7 +17,7 @@
             cargoLock = {
               lockFile = ./Cargo.lock;
             };
-            checkType = "debug";
+            buildType = "debug";
             checkFlags = [
               "--skip=test_extract_strings"
               "--skip=test_init"
