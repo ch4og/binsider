@@ -65,6 +65,7 @@ impl<'a> Analyzer<'a> {
     ) -> Result<Self> {
         let elf_bytes = ElfBytes::<AnyEndian>::minimal_parse(file_info.bytes)?;
         let elf = Elf::try_from(elf_bytes)?;
+        let x = "TEST";
         let heh = Heh::new(file_info.open_file()?, Encoding::Ascii, 0)
             .map_err(|e| Error::HexdumpError(e.to_string()))?;
         Ok(Self {
